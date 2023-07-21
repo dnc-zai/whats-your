@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn-icons-png.flaticon.com/512/2582/2582271.png" rel="shortcut icon" type="image/x-icon">
+
+    <title>AI 얼굴 유형 매칭테스트</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5206743694825527"
+     crossorigin="anonymous"></script>
+
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/${VERSION}/kakao.min.js"
+  integrity="${INTEGRITY_VALUE}" crossorigin="anonymous"></script>
+
+    <script>
+        Kakao.init('a6a06bd82464b53a610ef95ff3756111');
+        Kakao.isInitialized();
+    </script>
+</head>
+
+<body>
+    <!-- 네비게이션 바 -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light nav-distance"></nav> -->
+    <section class="section title">
+        <h3 class="title">AI 얼굴 유형 테스트</h3>
+        <h6 class="subtitle">어떤 얼굴이 나랑 잘 어울릴까?</h6>
+    </section>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <div class="file-upload">
+        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">DEEP LEARNING X ICE CREAM TEST</button>
+
+        <div class="loader" id="loader" style="display: none;">
+        <div class="container"">
+            <div class="box">
+                <div class="loader1"></div>
+            </div>
+        </div>
+        <div style="text-align: center;
+        font-size: 18px;
+        font-family: monospace;
+        "><span>AI가 얼굴 유형을 분석 중 입니다.</span></div>
+        </div>
+
+        <div class="image-upload-wrap">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="drag-text">
+                <img src="img/free-icon-upload-10197007.png" class="mt-5 pt-5 upload">
+                <h6 class="mb-5 pb-5 pt-4 upload-text">사진을 올려놓거나<br>
+                     꾹 눌러서 업로드하세요! </h6>
+            </div>
+        </div>
+
+        <div class="file-upload-content" id="file-upload-content">
+            <div class="head">
+                <div class="headerobjectswrapper" id="title-label" style="  font-family: 'Playfair Display', serif;
+                font-weight: 900;
+                font-size: 60px;
+                text-transform: uppercase;
+                display: inline-block;
+                line-height: 30%;
+                margin-top: 30px;
+                margin-bottom: 30px;">
+                    <header>Testing . .</header>
+                </div>
+            
+                <div class="subhead">DEEP LEARNING X ICE CREAM TEST</div>
+            </div>
+        </div>
+
+        <div class="result-board" style="display: none">
+            <div class="result-header-section" style="position: relative;">
+                <div class="image-section">       
+                    <div class="image-container">                    <img class="file-upload-image" id="face-image" src="#" alt="your image" /></div>    
+                    <div class="prograss-container">
+                        <div class="prograss-1 skill-bar">
+                            <div class="info" id="label-container-1"><span>1등</span></div>
+                            <div class="progress-bar javascript" id="javascript"><span></span></div>
+                        </div>
+                        <div class="prograss-2 skill-bar">
+                            <div class="info" id="label-container-2"><span>2등</span></div>
+                            <div class="progress-bar javascript-2" id="javascript-2"><span></span></div>
+                        </div>                    
+                    </div>
+                </div>
+                
+                <div class="personality-section">
+                    <div class="personality-head-1" style="display: flex;">
+                        <div class="personality-content-1 general-custom" id="personality-content-1" style="display: flex;
+                        justify-content: center;
+                        align-items: center;">
+                           personality-content-1
+                        </div>
+                        <div class="personality-content-2 general-custom" id="personality-content-2" style="display: flex;
+                        justify-content: center;
+                        align-items: center;">personality-content-2</div>
+                    </div>
+                    <div class="personality-head-2" style="display: flex;">
+                        <div class="personality-content-3 general-custom" id="personality-content-3" style="display: flex;
+                        justify-content: center;
+                        align-items: center;">personality-content-3</div>
+                        <div class="personality-content-4 general-custom" id="personality-content-4" style="display: flex;
+                        justify-content: center;
+                        align-items: center;">personality-content-4</div>
+                    </div>
+                    <div class="personality-head-3" style="display: flex;">
+                        <div class="personality-content-5 general-custom" id="personality-content-5" style="display: flex;
+                        justify-content: center;
+                        align-items: center;">personality-content-5</div>
+                        <div class="personality-content-6 general-custom" id="personality-content-6" style="display: flex;
+                        justify-content: center;
+                        align-items: center;">personality-content-6</div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="result-footer-section">
+            <div class="footer-head-1" style="display: flex;">
+                <div class="footer-content-1" id="footer-content-1" style="display: flex;
+                justify-content: center;
+                align-items: center;">footer-content-1</div>
+                <div class="footer-content-2" id="footer-content-2" style="display: flex;
+                justify-content: center;
+                align-items: center;">footer-content-2</div>
+            </div>
+            <div class="footer-head-2" style="display: flex;">
+                <div class="footer-content-3" id="footer-content-3" style="display: flex;
+                justify-content: center;
+                align-items: center;">footer-content-3</div>
+                <div class="footer-content-4" id="footer-content-4" style="display: flex;
+                justify-content: center;
+                align-items: center;">footer-content-4</div>
+            </div>
+        </div>
+
+        <div class="result-mbti willHide" style="justify-content: space-between; display:flex;">
+                <div class="love" style="
+                width:50%; background-color: #ffe390;
+                border-top: 1.5px solid #2f2f2f;
+                " id="love">
+
+                    <div class="love-title" style="
+                font-weight: 500;
+                font-size: 20px;
+                background-color: #f6f1ca;
+                                        height: 42px;" id="love-title">
+                        <div style="height: 42px;
+                        line-height: 42px; text-align: center;">LOVE</div>
+                    </div>
+                    <div class="love-content" style="
+                    border-top: 1.5px solid #2f2f2f;
+                    height: 100%;
+                    ">
+                        <div style="height: 29%;"></div>
+                        <div style="
+                        font-family: 'Playfair Display', serif;
+                    font-weight: 900;
+                    font-size: 26px;
+                    height: 30%; line-height: 30%; text-align: center;" id="love-content">test</div>
+                        <div style="height: 30%;"></div>
+                    </div>
+                </div>
+
+                <div class="hate" style="border-top: 1.5px solid #2f2f2f; width:50%; background-color:#f6f1ca; border-left: 3px dashed #807B79;
+                " id="hate">
+                    <div class="hate-title" style="
+                font-weight: 500;
+                font-size: 20px;                       
+                    background-color: #fff49d;
+                    height: 42px;" id="hate-title">
+                        <div style="height: 42px;
+                        line-height: 42px; text-align: center;">HATE</div>
+                    </div>
+
+                    <div class="hate-content" style="
+                    border-top: 1.5px solid #2f2f2f;
+                    height: 100%;
+                    ">
+                        <div style="height: 29%;"></div>
+                        <div style="
+                                            font-family: 'Playfair Display', serif;
+                    font-weight: 900;
+                    font-size: 26px;
+                        height: 30%; line-height: 30%; text-align: center;" id="hate-content">test</div>
+                        <div style="height: 30%;"></div>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+    <!-- 박스 끝 -->
+    <!-- <div id="webcam-container"></div> -->
+    <div class="kakao-adfit-main"></div>
+    </div>
+    <div class="image-title-wrap" id="image-title-wrap" style="display: none;">
+
+        <div style="text-align: center;
+        ">
+
+        <div style="text-align: center;
+        "><button type="button" class="remove-image">링크 복사</button>
+        </div> 
+
+        <button style="display :inline-block;
+        "type="button" onclick="window.location.reload()" class="remove-image">다른 사진으로 재시도
+        </button>
+
+        <div style="text-align: center; margin-bottom: 10px; color: #a09895; font-size: 14px;">
+            <span>720x1080의 사진이 테스트에 가장 적합합니다.</span>
+            </div>
+        </div>
+        <div class="kakao-adfit-result"></div>
+    </div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://wwwsss2fsa3r313com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <!-- Optional JavaScript -->
+    <script src="./share.js" charset="utf-8"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script>
+// import jquery from 'https://cdn.skypack.dev/jquery@3.5.1';
+//URL 복사
+	function copyClip(url){
+		var $temp = $('<input>');
+		$('body').append($temp);
+		$temp.val(url).select();
+		document.execCommand('copy');
+		$temp.remove();
+		alert('URL이 복사되었습니다.');
+	}
+	$('.copy-btn').on('click', function(e){
+		e.preventDefault();
+		var link = location.href;
+		copyClip(link);
+	});     
+
+        function readURL(input) {
+            document.getElementById("loader").style.display = "block"
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('.file-upload-btn').hide();
+                    $('.image-upload-wrap').hide();
+                    $('.file-upload-image').attr('src', e.target.result);
+                    $('.file-upload-content').show();
+                    $('.image-title').html(input.files[0].name);
+                };
+                reader.readAsDataURL(input.files[0]);
+                init().then(()=>{
+                    predict()
+                });
+            } else {
+                removeUpload();
+            }
+        }
+
+        function hide() {
+            $('.willHide').hide();
+        }
+
+        function removeUpload() {
+            $('.file-upload-content').hide();
+            $('.result-board').hide();
+            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+            $('.file-upload-content').hide();
+            $('.file-upload-btn').show();
+            $('.image-upload-wrap').show();
+        }
+        $('.image-upload-wrap').bind('dragover', function() {
+            $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function() {
+            $('.image-upload-wrap').removeClass('image-dropping');
+        });
+    </script>
+    <script type="text/javascript">
+        // More API functions here:
+        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+        // the link to your model provided by Teachable Machine export panel
+        const URL = "https://teachablemachine.withgoogle.com/models/lDRyhV6pf/";
+        let model, webcam, labelContainer, maxPredictions;
+        // Load the image model and setup the webcam
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+            // load the model and metadata
+            // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+            // or files from your local hard drive
+            // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+            labelContainer = document.getElementById("label-container-1");
+            labelContainerSecond = document.getElementById("label-container-2");
+            titleLabel = document.getElementById("title-label")
+            for (let i = 0; i < maxPredictions; i++) { // and class labels
+                labelContainer.appendChild(document.createElement("div"));
+            }
+        }
+        // run the webcam image through the image model
+        async function predict() {
+            $('.result-board').show();
+            document.getElementById("loader").style.display = "none"
+            document.getElementById("file-upload-content").style.visibility = "visible"
+            document.getElementById("image-title-wrap").style.display = "block"
+
+            var image = document.getElementById("face-image")
+            const prediction = await model.predict(image, false);
+            var chagedName = [];
+            prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));                    
+
+            for (let i = 0; i < maxPredictions; i++) {
+                switch (prediction[i].className) {
+                    case "ISTJ":
+                    prediction[i].className = "Cotton"
+                        break;
+                    case "ISTP":
+                    prediction[i].className = "Jubilee"
+                        break;
+                    case "ESFJ":
+                    prediction[i].className = "Pistachio"
+                        break;
+                    case "ENFP":
+                    prediction[i].className = "Sherbet"
+                        break;
+                    case "ISFJ":
+                    prediction[i].className = "Violet"
+                        break;
+                    case "ENTJ":
+                    prediction[i].className = "Chestnut"
+                        break;
+                    case "ENTP":
+                    prediction[i].className = "Rainbow"
+                        break;
+                    case "ESFP":
+                    prediction[i].className = "Matcha"
+                        break;
+                    default:
+                    prediction[i].className = "Untitled"
+                }
+            }
+
+            for (let i = 0; i < 2; i++) {
+                switch (prediction[0].className) {
+                case "Cotton":
+                // prediction[0].className = "Cotton Candy"
+
+                document.getElementById("personality-content-1").style.backgroundColor = "#9ae2c4"
+                document.getElementById("personality-content-6").style.backgroundColor = "#9ae2c4"
+                document.getElementById("footer-content-3").style.backgroundColor = "#9ae2c4"  
+
+                document.getElementById("personality-content-2").style.backgroundColor = "#fdff9b"
+                document.getElementById("personality-content-5").style.backgroundColor = "#fdff9b"
+                document.getElementById("footer-content-4").style.backgroundColor = "#fdff9b"
+
+                document.getElementById("personality-content-3").style.backgroundColor = "#fec9a7"
+                document.getElementById("footer-content-2").style.backgroundColor = "#fec9a7" 
+                document.getElementById("love-title").style.backgroundColor = "#fec9a7"
+                document.getElementById("hate-title").style.backgroundColor = "#fec9a7"
+
+                document.getElementById("personality-content-4").style.backgroundColor = "#fd9794"
+                document.getElementById("footer-content-1").style.backgroundColor = "#fd9794"
+                document.getElementById("love").style.backgroundColor = "#fd9794"
+                document.getElementById("hate").style.backgroundColor = "#fd9794"
+
+                document.getElementById("love-content").innerHTML = "Matcha"
+                document.getElementById("hate-content").innerHTML = "Rainbow"
+                document.getElementById("love-content").style.color = "#fff"
+                document.getElementById("hate-content").style.color = "#fff"
+                
+                document.getElementById("personality-content-1").innerHTML = "어서 칭찬해줘."
+                document.getElementById("personality-content-2").innerHTML = "피-쓰풀<br>그자체"
+                document.getElementById("personality-content-3").innerHTML = "리액션<br>백만개"
+                document.getElementById("personality-content-4").innerHTML = "반항심"
+                document.getElementById("personality-content-5").innerHTML = "n년전에<br>실수한 일들"
+                document.getElementById("personality-content-6").innerHTML = "관종력"
+
+                document.getElementById("footer-content-1").innerHTML = "외롭지만 외롭지않아"
+                document.getElementById("footer-content-2").innerHTML = "친구들 생일"
+                document.getElementById("footer-content-3").innerHTML = "선 넘지마쇼"
+                document.getElementById("footer-content-4").innerHTML = "내 안에 흑염룡 10마리"
+
+                    break;
+                case "Jubilee":
+                // prediction[0].className = "Jubilee"
+
+                document.getElementById("personality-content-1").style.backgroundColor = "#d4ebb5"
+                document.getElementById("personality-content-6").style.backgroundColor = "#d4ebb5"
+                document.getElementById("footer-content-3").style.backgroundColor = "#d4ebb5"  
+
+                document.getElementById("personality-content-2").style.backgroundColor = "#fec9a6"
+                document.getElementById("personality-content-5").style.backgroundColor = "#fec9a6"
+                document.getElementById("footer-content-4").style.backgroundColor = "#fec9a6"
+
+                document.getElementById("personality-content-3").style.backgroundColor = "#fd9795"
+                document.getElementById("footer-content-2").style.backgroundColor = "#fd9795" 
+                document.getElementById("love-title").style.backgroundColor = "#fd9795"
+                document.getElementById("hate-title").style.backgroundColor = "#fd9795"
+
+                document.getElementById("personality-content-4").style.backgroundColor = "#fc7582"
+                document.getElementById("footer-content-1").style.backgroundColor = "#fc7582"
+                document.getElementById("love").style.backgroundColor = "#fc7582"
+                document.getElementById("hate").style.backgroundColor = "#fc7582"
+
+                document.getElementById("love-content").innerHTML = "Pistachio"
+                document.getElementById("hate-content").innerHTML = "Matcha"
+
+                document.getElementById("personality-content-1").innerHTML = "애인한정 F화"
+                document.getElementById("personality-content-2").innerHTML = "무덤덤"
+                document.getElementById("personality-content-3").innerHTML = "지나친<br>현실감각"
+                document.getElementById("personality-content-4").innerHTML = "담백한<br>애정표현"
+                document.getElementById("personality-content-5").innerHTML = "확실하게 말해줘"
+                document.getElementById("personality-content-6").innerHTML = "일처리<br>속도 1위"
+
+                document.getElementById("footer-content-1").innerHTML = "좋아하는 건 박사급"
+                document.getElementById("footer-content-2").innerHTML = "열정열정열정"
+                document.getElementById("footer-content-3").innerHTML = "후엥 집갈래"
+                document.getElementById("footer-content-4").innerHTML = "아무나 옆에 두지않지"
+
+
+
+                    break;
+                case "Pistachio":
+                // prediction[0].className = "Pistachio"
+
+                document.getElementById("personality-content-1").style.backgroundColor = "#adced7"
+                document.getElementById("personality-content-6").style.backgroundColor = "#adced7"
+                document.getElementById("footer-content-3").style.backgroundColor = "#adced7"  
+
+                document.getElementById("personality-content-2").style.backgroundColor = "#fedadb"
+                document.getElementById("personality-content-5").style.backgroundColor = "#fedadb"
+                document.getElementById("footer-content-4").style.backgroundColor = "#fedadb"
+
+                document.getElementById("personality-content-3").style.backgroundColor = "#f4f4f4"
+                document.getElementById("footer-content-2").style.backgroundColor = "#f4f4f4" 
+                document.getElementById("love-title").style.backgroundColor = "#f4f4f4"
+                document.getElementById("hate-title").style.backgroundColor = "#f4f4f4"
+
+                document.getElementById("personality-content-4").style.backgroundColor = "#8ad7c1"
+                document.getElementById("footer-content-1").style.backgroundColor = "#8ad7c1"
+                document.getElementById("love").style.backgroundColor = "#8ad7c1"
+                document.getElementById("hate").style.backgroundColor = "#8ad7c1"
+
+                document.getElementById("love-content").innerHTML = "Jubilee"
+                document.getElementById("hate-content").innerHTML = "Rainbow"
+                
+                document.getElementById("personality-content-1").innerHTML = "먼저 고백하기"
+                document.getElementById("personality-content-2").innerHTML = "손잡기"
+                document.getElementById("personality-content-3").innerHTML = "데이트<br>계획"
+                document.getElementById("personality-content-4").innerHTML = "애정표현"
+                document.getElementById("personality-content-5").innerHTML = "To Do List"
+                document.getElementById("personality-content-6").innerHTML = "눈치 백단"
+
+                document.getElementById("footer-content-1").innerHTML = "가방에 뭐든지 있음"
+                document.getElementById("footer-content-2").innerHTML = "평화가 최고"
+                document.getElementById("footer-content-3").innerHTML = "그때 말할걸"
+                document.getElementById("footer-content-4").innerHTML = "MBTI 과몰입"
+
+                    break;
+                case "Sherbet":
+                // prediction[0].className = "Sherbet"
+
+                document.getElementById("personality-content-1").style.backgroundColor = "#cad5cf"
+                document.getElementById("personality-content-6").style.backgroundColor = "#cad5cf"
+                document.getElementById("footer-content-3").style.backgroundColor = "#cad5cf"  
+
+                document.getElementById("personality-content-2").style.backgroundColor = "#feded0"
+                document.getElementById("personality-content-5").style.backgroundColor = "#feded0"
+                document.getElementById("footer-content-4").style.backgroundColor = "#feded0"
+
+                document.getElementById("personality-content-3").style.backgroundColor = "#febcca"
+                document.getElementById("footer-content-2").style.backgroundColor = "#febcca" 
+                document.getElementById("love-title").style.backgroundColor = "#febcca"
+                document.getElementById("hate-title").style.backgroundColor = "#febcca"
+
+                document.getElementById("personality-content-4").style.backgroundColor = "#ef99a8"
+                document.getElementById("footer-content-1").style.backgroundColor = "#ef99a8"
+                document.getElementById("love").style.backgroundColor = "#ef99a8"
+                document.getElementById("hate").style.backgroundColor = "#ef99a8"
+
+                document.getElementById("love-content").innerHTML = "Rainbow"
+                document.getElementById("hate-content").innerHTML = "Matcha"
+                document.getElementById("love-content").style.color = "#fff" 
+                document.getElementById("hate-content").style.color = "#fff"
+
+                document.getElementById("personality-content-1").innerHTML = "작고 소듕해"
+                document.getElementById("personality-content-2").innerHTML = "반전매력"
+                document.getElementById("personality-content-3").innerHTML = "리액션<br>부자"
+                document.getElementById("personality-content-4").innerHTML = "선물 사놓고<br>입 근질근질"
+                document.getElementById("personality-content-5").innerHTML = "사람 짱 좋아"
+                document.getElementById("personality-content-6").innerHTML = "우당탕탕"
+
+                document.getElementById("footer-content-1").innerHTML = "디폴트 친절 발랄"
+                document.getElementById("footer-content-2").innerHTML = "신나부러"
+                document.getElementById("footer-content-3").innerHTML = "망상력 만렙"
+                document.getElementById("footer-content-4").innerHTML = "집에서 드러누워"
+
+                    break;
+                case "Violet":
+                // prediction[0].className = "Yogurt"
+
+                document.getElementById("personality-content-1").style.backgroundColor = "#bad6ed"
+                document.getElementById("personality-content-6").style.backgroundColor = "#bad6ed"
+                document.getElementById("footer-content-3").style.backgroundColor = "#bad6ed"  
+
+                document.getElementById("personality-content-2").style.backgroundColor = "#d2c0ec"
+                document.getElementById("personality-content-5").style.backgroundColor = "#d2c0ec"
+                document.getElementById("footer-content-4").style.backgroundColor = "#d2c0ec"
+
+                document.getElementById("personality-content-3").style.backgroundColor = "#edb7d6"
+                document.getElementById("footer-content-2").style.backgroundColor = "#edb7d6" 
+                document.getElementById("love-title").style.backgroundColor = "#edb7d6"
+                document.getElementById("hate-title").style.backgroundColor = "#edb7d6"
+
+                document.getElementById("personality-content-4").style.backgroundColor = "#f6b8bd"
+                document.getElementById("footer-content-1").style.backgroundColor = "#f6b8bd"
+                document.getElementById("love").style.backgroundColor = "#f6b8bd"
+                document.getElementById("hate").style.backgroundColor = "#f6b8bd"
+
+                document.getElementById("love-content").innerHTML = "Jubilee"
+                document.getElementById("hate-content").innerHTML = "Rainbow"
+
+                document.getElementById("personality-content-1").innerHTML = "할건 한다구"
+                document.getElementById("personality-content-2").innerHTML = "모든 걸<br>알고싶어"
+                document.getElementById("personality-content-3").innerHTML = "세번은<br>참는다"
+                document.getElementById("personality-content-4").innerHTML = "세계최강<br>진입장벽"
+                document.getElementById("personality-content-5").innerHTML = "프로 N잡러"
+                document.getElementById("personality-content-6").innerHTML = "소심소심"
+
+                document.getElementById("footer-content-1").innerHTML = "게으른 완벽주의자"
+                document.getElementById("footer-content-2").innerHTML = "자기관리 1위"
+                document.getElementById("footer-content-3").innerHTML = "규칙따위.."
+                document.getElementById("footer-content-4").innerHTML = "귀여운 거 잔뜩있음"
+
+                    break;
+                case "Chestnut":
+            //     document.getElementById("javascript").style.width(prediction[0].probability.toFixed(2)*100)
+            // document.getElementById("javascript-2").style.width(prediction[1].probability.toFixed(2)*100)
+                // prediction[0].className = "Chestnuts"
+                document.getElementById("personality-content-1").style.backgroundColor = "#eee4c6"
+                document.getElementById("personality-content-6").style.backgroundColor = "#eee4c6"
+                document.getElementById("footer-content-3").style.backgroundColor = "#eee4c6"  
+
+                document.getElementById("personality-content-2").style.backgroundColor = "#e4c3a5"
+                document.getElementById("personality-content-5").style.backgroundColor = "#e4c3a5"
+                document.getElementById("footer-content-4").style.backgroundColor = "#e4c3a5"
+
+                document.getElementById("personality-content-3").style.backgroundColor = "#df8b72"
+                document.getElementById("footer-content-2").style.backgroundColor = "#df8b72" 
+                document.getElementById("love-title").style.backgroundColor = "#df8b72"
+                document.getElementById("hate-title").style.backgroundColor = "#df8b72"
+
+                document.getElementById("personality-content-4").style.backgroundColor = "#ab4548"
+                document.getElementById("footer-content-1").style.backgroundColor = "#ab4548"
+                document.getElementById("personality-content-4").style.color = "#eee4c6"
+                document.getElementById("footer-content-1").style.color = "#eee4c6"
+                document.getElementById("love").style.backgroundColor = "#ab4548"
+                document.getElementById("love").style.color = "#eee4c6"
+                document.getElementById("hate").style.backgroundColor = "#ab4548"
+                document.getElementById("hate").style.color = "#eee4c6"
+
+                document.getElementById("love-content").innerHTML = "Rainbow"
+                document.getElementById("love-content").style.color = "#eee4c6" 
+                document.getElementById("hate-content").innerHTML = "Yogurt"
+                document.getElementById("hate-content").style.color = "#eee4c6" 
+
+                document.getElementById("personality-content-1").innerHTML = "은은한<br>츤데레"
+                document.getElementById("personality-content-2").innerHTML = "이벤트 짱"
+                document.getElementById("personality-content-3").innerHTML = "친구장벽<br>겁나높음"
+                document.getElementById("personality-content-4").innerHTML = "안 볼사람"
+                document.getElementById("personality-content-5").innerHTML = "정이라고 하자"
+                document.getElementById("personality-content-6").innerHTML = "우주최강<br>도도함"
+
+                document.getElementById("footer-content-1").innerHTML = "[파브르 선정]<br>편한 사람 1위"
+                document.getElementById("footer-content-2").innerHTML = "변명 검열<br>기능 탑재"
+                document.getElementById("footer-content-3").innerHTML = "허당아니에요"
+                document.getElementById("footer-content-4").innerHTML = "일 벌리기 대마왕"
+                    break;
+
+                case "Rainbow":
+                // prediction[0].className = "Rainbow"
+
+                document.getElementById("personality-content-1").style.backgroundColor = "#f8979a"
+                document.getElementById("personality-content-6").style.backgroundColor = "#f8979a"
+                document.getElementById("footer-content-3").style.backgroundColor = "#f8979a"  
+
+                document.getElementById("personality-content-2").style.backgroundColor = "#fdffa8"
+                document.getElementById("personality-content-5").style.backgroundColor = "#fdffa8"
+                document.getElementById("footer-content-4").style.backgroundColor = "#fdffa8"
+
+                document.getElementById("personality-content-3").style.backgroundColor = "#c0ffb2"
+                document.getElementById("footer-content-2").style.backgroundColor = "#c0ffb2" 
+                document.getElementById("love-title").style.backgroundColor = "#c0ffb2"
+                document.getElementById("hate-title").style.backgroundColor = "#c0ffb2"
+
+                document.getElementById("personality-content-4").style.backgroundColor = "#8df5ff"
+                document.getElementById("footer-content-1").style.backgroundColor = "#8df5ff"
+                document.getElementById("love").style.backgroundColor = "#8df5ff"
+                document.getElementById("hate").style.backgroundColor = "#8df5ff"
+
+                document.getElementById("personality-content-4").style.color = "black"
+                document.getElementById("footer-content-1").style.color = "black"
+                document.getElementById("love").style.color = "black"
+                document.getElementById("hate").style.color = "black"
+
+                document.getElementById("love-content").innerHTML = "Matcha"
+                document.getElementById("hate-content").innerHTML = "Cotton"
+
+                document.getElementById("personality-content-1").innerHTML = "역시 대단해"
+                document.getElementById("personality-content-2").innerHTML = "인간미"
+                document.getElementById("personality-content-3").innerHTML = "과몰입<br>마인드"
+                document.getElementById("personality-content-4").innerHTML = "Just<br>Do It"
+                document.getElementById("personality-content-5").innerHTML = "이게 슬픈건가?"
+                document.getElementById("personality-content-6").innerHTML = "충동구매"
+
+                document.getElementById("footer-content-1").innerHTML = "부자가 되고싶어"
+                document.getElementById("footer-content-2").innerHTML = "가보자고"
+                document.getElementById("footer-content-3").innerHTML = "인싸같은 아싸"
+                document.getElementById("footer-content-4").innerHTML = "하면 안돼요? 왜요?"
+
+                
+
+                    break;
+                case "Matcha":
+                // prediction[0].className = "Matcha"
+
+                document.getElementById("personality-content-1").style.backgroundColor = "#0f6d7d"
+                document.getElementById("personality-content-6").style.backgroundColor = "#0f6d7d"
+                document.getElementById("footer-content-3").style.backgroundColor = "#0f6d7d"  
+                document.getElementById("personality-content-1").style.color = "#fff"
+                document.getElementById("personality-content-6").style.color = "#fff"
+                document.getElementById("footer-content-3").style.color = "#fff" 
+
+                document.getElementById("personality-content-2").style.backgroundColor = "#149a84"
+                document.getElementById("personality-content-5").style.backgroundColor = "#149a84"
+                document.getElementById("footer-content-4").style.backgroundColor = "#149a84"
+                document.getElementById("personality-content-2").style.color = "#fff"
+                document.getElementById("personality-content-5").style.color = "#fff"
+                document.getElementById("footer-content-4").style.color = "#fff"
+
+                document.getElementById("personality-content-3").style.backgroundColor = "#19ba88"
+                document.getElementById("footer-content-2").style.backgroundColor = "#19ba88" 
+                document.getElementById("love-title").style.backgroundColor = "#19ba88"
+                document.getElementById("hate-title").style.backgroundColor = "#19ba88"
+
+                document.getElementById("personality-content-4").style.backgroundColor = "#ecf2af"
+                document.getElementById("footer-content-1").style.backgroundColor = "#ecf2af"
+                document.getElementById("love").style.backgroundColor = "#ecf2af"
+                document.getElementById("hate").style.backgroundColor = "#ecf2af"
+
+                document.getElementById("love-content").innerHTML = "Cotton"
+                document.getElementById("hate-content").innerHTML = "Jubilee"
+
+                document.getElementById("personality-content-1").innerHTML = "카톡은 나중에"
+                document.getElementById("personality-content-2").innerHTML = "인기많은<br>신입사원"
+                document.getElementById("personality-content-3").innerHTML = "긍정맨<br>긍정걸"
+                document.getElementById("personality-content-4").innerHTML = "직진러"
+                document.getElementById("personality-content-5").innerHTML = "오히려 좋아 무새"
+                document.getElementById("personality-content-6").innerHTML = "선톡 갈기기"
+
+                document.getElementById("footer-content-1").innerHTML = "감히 날 가두려고해?"
+                document.getElementById("footer-content-2").innerHTML = "마춤뻡 선생"
+                document.getElementById("footer-content-3").innerHTML = "깜짝선물 조와"
+                document.getElementById("footer-content-4").innerHTML = "오.. 이걸 다하라고?"
+
+                    break;
+                default:
+            }
+
+            const classPrediction = prediction[0].className
+                labelContainer.childNodes[0].innerHTML = classPrediction;
+
+            const classPredictionSecond = prediction[1].className
+                labelContainerSecond.childNodes[0].innerHTML = classPredictionSecond;
+
+            const classPredictionTitle = prediction[0].className
+                titleLabel.innerHTML = classPredictionTitle;
+            }
+        }
+    </script>
+
+</body>
+
+<!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+
+</html>
+
