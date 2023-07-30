@@ -1,4 +1,56 @@
-const url = 'https://cute-entremet-f4c868.netlify.app/';
+//const url = 'https://cute-entremet-f4c868.netlify.app/';
+
+function toggleShareOptions() {
+  const shareOptions = document.getElementById('shareOptions');
+  shareOptions.style.display = shareOptions.style.display === 'block' ? 'none' : 'block';
+}
+
+function shareLink() {
+  if (navigator.share) {
+    const url = window.location.href;
+    navigator.share({
+      title: document.title,
+      url: url
+    })
+      .then(() => console.log('Link shared successfully!'))
+      .catch(error => console.error('Error sharing link:', error));
+  } else {
+    toggleShareOptions();
+  }
+}
+
+function shareToFacebook() {
+  const url = encodeURIComponent(window.location.href);
+  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+  window.open(facebookShareUrl, '_blank');
+}
+
+function shareToInstagram() {
+  const url = encodeURIComponent(window.location.href);
+  const instagramShareUrl = `https://www.instagram.com/sharer.php?u=${url}`;
+  window.open(instagramShareUrl, '_blank');
+}
+
+function shareToKakao() {
+  const url = encodeURIComponent(window.location.href);
+  const kakaoShareUrl = `https://story.kakao.com/s/share?url=${url}`;
+  window.open(kakaoShareUrl, '_blank');
+}
+
+
+function copyCurrentLink() {
+  const currentLink = window.location.href;
+
+  const tempInput = document.createElement('input');
+  tempInput.value = currentLink;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand('copy');
+  document.body.removeChild(tempInput);
+
+  alert('Link copied to clipboard: ' + currentLink);
+}
+
 
 function kakaoShare() {
 Kakao.Share.createDefaultButton({

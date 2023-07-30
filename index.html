@@ -27,6 +27,9 @@
 
 <body>
     <!-- 네비게이션 바 -->
+
+
+
     <!-- <nav class="navbar navbar-expand-lg navbar-light nav-distance"></nav> -->
     <section class="section title">
         <h3 class="title">AI 얼굴 유형 테스트</h3>
@@ -204,7 +207,12 @@
         ">
 
         <div style="text-align: center;
-        "><button type="button" class="remove-image">링크 복사</button>
+        "><button type="button" onclick="shareLink()" class="remove-image">링크 공유</button>
+            <div class="share-options" id="shareOptions">
+                <button onclick="shareToFacebook()">Facebook</button>
+                <button onclick="shareToInstagram()">Instagram</button>
+                <button onclick="shareToKakao()">KakaoTalk</button>
+            </div>
         </div> 
 
         <button style="display :inline-block;
